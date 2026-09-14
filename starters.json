@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-09-13",
+  "starters": [
+    {
+      "name": "django-api",
+      "displayName": "Django API Starter",
+      "description": "Production ready Django REST API backend",
+      "repository": "https://github.com/FonijBuild/easy-django-api-starter.git",
+      "version": "1.0.0",
+      "category": "backend"
+    },
+    {
+      "name": "vite-react",
+      "displayName": "Vite React SPA",
+      "description": "Modern React SPA starter",
+      "repository": "https://github.com/FonijBuild/easy-starter-vite-react-spa.git",
+      "version": "1.0.0",
+      "category": "frontend"
+    }
+  ]
+}
