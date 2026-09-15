@@ -1,17 +1,31 @@
 {
+  "$schema": "./schemas/catalog.schema.json",
   "schemaVersion": 1,
-  "version": "1.0.0",
-
+  "catalogVersion": "1.0.0",
+  "updatedAt": "2026-09-15",
   "foundations": [
-    {
-      "id": "web-nextjs",
-      "repository": "FonijBuild/easy-nextjs-web-starter",
-      "ref": "v1.2.0"
-    },
-    {
-      "id": "api-django",
-      "repository": "FonijBuild/easy-django-api-starter",
-      "ref": "v1.1.0"
-    }
+    "./foundations/web-nextjs.json",
+    "./foundations/web-spa.json",
+    "./foundations/api-django.json",
+    "./foundations/app-expo.json",
+    "./foundations/browser-extension.json",
+    "./foundations/python-service.json"
+  ],
+  "blueprints": [
+    "./blueprints/web.json",
+    "./blueprints/web-api.json",
+    "./blueprints/mobile.json",
+    "./blueprints/mobile-api.json",
+    "./blueprints/web-mobile-api.json",
+    "./blueprints/extension.json",
+    "./blueprints/extension-api.json",
+    "./blueprints/service.json"
+  ],
+  "capabilities": [],
+  "recipes": [],
+  "evolutions": [
+    "./evolutions/web-to-web-api.json",
+    "./evolutions/mobile-to-mobile-api.json",
+    "./evolutions/web-api-to-web-mobile-api.json"
   ]
 }

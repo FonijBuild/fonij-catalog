@@ -8,7 +8,7 @@
 ![Status: Active](https://img.shields.io/badge/status-active-2EA44F)
 ![Contract: Versioned](https://img.shields.io/badge/contract-versioned-0EA5E9)
 
-[Documentation](https://github.com/FonijBuild/fonij-docs) · [Discussions](https://github.com/orgs/FonijBuild/discussions) · [Issues](https://github.com/FonijBuild/fonij-catalog/issues)
+[Documentation](https://github.com/FonijBuild/product-builder-handbook) · [Discussions](https://github.com/orgs/FonijBuild/discussions) · [Issues](https://github.com/FonijBuild/fonij-catalog/issues)
 
 </div>
 
