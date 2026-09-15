@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "status": "stable",
+  "official": true,
+  "manifestPath": ".fonij/starter.json",
+  "id": "api-django",
+  "name": "Django API",
+  "description": "Django API foundation for maintainable domain logic, admin workflows, and multi-client products.",
+  "target": "api",
+  "source": {
+    "repository": "FonijBuild/easy-django-api-starter",
+    "ref": "v1.0.0",
+    "version": "1.0.0"
+  },
+  "runtime": {
+    "language": "python",
+    "framework": "django",
+    "packageManager": "uv"
+  },
+  "provides": [
+    "api",
+    "rest-api",
+    "admin",
+    "database",
+    "postgres-ready",
+    "openapi"
+  ],
+  "compatibleWith": [
+    "web-nextjs",
+    "web-spa",
+    "app-expo",
+    "browser-extension",
+    "python-service"
+  ],
+  "commands": {
+    "install": {
+      "command": "uv",
+      "args": [
+        "sync"
+      ]
+    },
+    "dev": {
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        "manage.py",
+        "runserver"
+      ]
+    },
+    "check": {
+      "command": "uv",
+      "args": [
+        "run",
+        "pytest"
+      ]
+    }
+  }
+}

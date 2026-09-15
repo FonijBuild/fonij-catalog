@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "status": "stable",
+  "official": true,
+  "manifestPath": ".fonij/starter.json",
+  "id": "web-spa",
+  "name": "Vite React SPA",
+  "description": "Vite + React foundation for dashboards, internal tools, portals, and API-driven single-page applications.",
+  "target": "web",
+  "source": {
+    "repository": "FonijBuild/easy-vite-react-spa-starter",
+    "ref": "v1.0.0",
+    "version": "1.0.0"
+  },
+  "runtime": {
+    "language": "typescript",
+    "framework": "vite-react",
+    "packageManager": "pnpm"
+  },
+  "provides": [
+    "web",
+    "spa",
+    "client-rendering",
+    "typed-routing",
+    "api-driven"
+  ],
+  "compatibleWith": [
+    "api-django",
+    "app-expo",
+    "browser-extension",
+    "python-service"
+  ],
+  "commands": {
+    "install": {
+      "command": "pnpm",
+      "args": [
+        "install"
+      ]
+    },
+    "dev": {
+      "command": "pnpm",
+      "args": [
+        "dev"
+      ]
+    },
+    "check": {
+      "command": "pnpm",
+      "args": [
+        "check"
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "status": "stable",
+  "official": true,
+  "manifestPath": ".fonij/starter.json",
+  "id": "app-expo",
+  "name": "Expo App",
+  "description": "Expo foundation for maintainable cross-platform Android, iOS, and web applications.",
+  "target": "mobile",
+  "source": {
+    "repository": "FonijBuild/easy-expo-app-starter",
+    "ref": "v1.0.0",
+    "version": "1.0.0"
+  },
+  "runtime": {
+    "language": "typescript",
+    "framework": "expo",
+    "packageManager": "pnpm"
+  },
+  "provides": [
+    "mobile",
+    "ios",
+    "android",
+    "cross-platform",
+    "native-capabilities"
+  ],
+  "compatibleWith": [
+    "api-django",
+    "web-nextjs",
+    "web-spa",
+    "python-service"
+  ],
+  "commands": {
+    "install": {
+      "command": "pnpm",
+      "args": [
+        "install"
+      ]
+    },
+    "dev": {
+      "command": "pnpm",
+      "args": [
+        "dev"
+      ]
+    },
+    "check": {
+      "command": "pnpm",
+      "args": [
+        "check"
+      ]
+    }
+  }
+}

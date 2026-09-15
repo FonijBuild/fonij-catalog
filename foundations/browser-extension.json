@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "status": "stable",
+  "official": true,
+  "manifestPath": ".fonij/starter.json",
+  "id": "browser-extension",
+  "name": "Browser Extension",
+  "description": "React + TypeScript foundation for cross-browser extensions targeting Chrome, Edge, and Firefox.",
+  "target": "browser-extension",
+  "source": {
+    "repository": "FonijBuild/easy-browser-extension-starter",
+    "ref": "v1.0.0",
+    "version": "1.0.0"
+  },
+  "runtime": {
+    "language": "typescript",
+    "framework": "extensionjs",
+    "packageManager": "pnpm"
+  },
+  "provides": [
+    "browser-extension",
+    "content-scripts",
+    "background",
+    "popup",
+    "cross-browser"
+  ],
+  "compatibleWith": [
+    "api-django",
+    "web-spa",
+    "python-service"
+  ],
+  "commands": {
+    "install": {
+      "command": "pnpm",
+      "args": [
+        "install"
+      ]
+    },
+    "dev": {
+      "command": "pnpm",
+      "args": [
+        "dev"
+      ]
+    },
+    "check": {
+      "command": "pnpm",
+      "args": [
+        "check"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "status": "stable",
+  "official": true,
+  "manifestPath": ".fonij/starter.json",
+  "id": "web-nextjs",
+  "name": "Next.js Web",
+  "description": "Next.js web foundation for public products, SaaS applications, portals, and SEO-sensitive experiences.",
+  "target": "web",
+  "source": {
+    "repository": "FonijBuild/easy-nextjs-web-starter",
+    "ref": "v1.0.0",
+    "version": "1.0.0"
+  },
+  "runtime": {
+    "language": "typescript",
+    "framework": "nextjs",
+    "packageManager": "pnpm"
+  },
+  "provides": [
+    "web",
+    "ssr",
+    "seo",
+    "server-rendering",
+    "route-handlers"
+  ],
+  "compatibleWith": [
+    "api-django",
+    "app-expo",
+    "python-service"
+  ],
+  "commands": {
+    "install": {
+      "command": "pnpm",
+      "args": [
+        "install"
+      ]
+    },
+    "dev": {
+      "command": "pnpm",
+      "args": [
+        "dev"
+      ]
+    },
+    "check": {
+      "command": "pnpm",
+      "args": [
+        "check"
+      ]
+    }
+  }
+}

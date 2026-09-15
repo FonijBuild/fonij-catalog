@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "status": "stable",
+  "official": true,
+  "manifestPath": ".fonij/starter.json",
+  "id": "python-service",
+  "name": "Python Service",
+  "description": "Python service foundation for workers, webhooks, scheduled jobs, integrations, automation, and messaging workloads.",
+  "target": "service",
+  "source": {
+    "repository": "FonijBuild/easy-python-service-starter",
+    "ref": "v1.0.0",
+    "version": "1.0.0"
+  },
+  "runtime": {
+    "language": "python",
+    "framework": "none",
+    "packageManager": "uv"
+  },
+  "provides": [
+    "service",
+    "worker",
+    "webhooks",
+    "scheduled-jobs",
+    "integrations",
+    "bot-ready"
+  ],
+  "compatibleWith": [
+    "api-django",
+    "web-nextjs",
+    "web-spa",
+    "app-expo",
+    "browser-extension"
+  ],
+  "commands": {
+    "install": {
+      "command": "uv",
+      "args": [
+        "sync"
+      ]
+    },
+    "check": {
+      "command": "uv",
+      "args": [
+        "run",
+        "pytest"
+      ]
+    }
+  }
+}
