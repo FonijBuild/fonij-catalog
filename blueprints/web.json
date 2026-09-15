@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "web",
+  "name": "Web",
+  "description": "Standalone web product with a client-first default and an SSR/SEO-capable alternative.",
+  "status": "stable",
+  "workspace": "standalone",
+  "targets": [
+    "web"
+  ],
+  "apps": [
+    {
+      "id": "web",
+      "target": "web",
+      "path": ".",
+      "foundation": {
+        "default": "web-spa",
+        "alternatives": [
+          "web-nextjs"
+        ]
+      }
+    }
+  ],
+  "capabilities": [],
+  "recommendedFor": [
+    "prototype",
+    "dashboard",
+    "internal-tool",
+    "authenticated-web-app",
+    "public-web-app"
+  ]
+}

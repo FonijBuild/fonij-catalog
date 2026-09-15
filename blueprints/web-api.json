@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "web-api",
+  "name": "Web + API",
+  "description": "Web frontend with a dedicated Django API in a monorepo.",
+  "status": "stable",
+  "workspace": "monorepo",
+  "targets": [
+    "web",
+    "api"
+  ],
+  "apps": [
+    {
+      "id": "web",
+      "target": "web",
+      "path": "apps/web",
+      "foundation": {
+        "default": "web-spa",
+        "alternatives": [
+          "web-nextjs"
+        ]
+      }
+    },
+    {
+      "id": "api",
+      "target": "api",
+      "path": "apps/api",
+      "foundation": {
+        "default": "api-django",
+        "alternatives": []
+      }
+    }
+  ],
+  "capabilities": [
+    "rest-api"
+  ],
+  "recommendedFor": [
+    "business-application",
+    "dashboard",
+    "saas",
+    "multi-client-ready",
+    "domain-heavy-web-app"
+  ]
+}
