@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FonijBuild/fonij-catalog/schemas/blueprint.schema.json",
+  "title": "Fonij Blueprint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "description",
+    "status",
+    "workspace",
+    "targets",
+    "apps",
+    "capabilities",
+    "recommendedFor"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "experimental",
+        "stable",
+        "deprecated"
+      ]
+    },
+    "workspace": {
+      "enum": [
+        "standalone",
+        "monorepo"
+      ]
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "web",
+          "mobile",
+          "api",
+          "browser-extension",
+          "service"
+        ]
+      }
+    },
+    "apps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "target",
+          "path",
+          "foundation"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "target": {
+            "enum": [
+              "web",
+              "mobile",
+              "api",
+              "browser-extension",
+              "service"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "foundation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "default",
+              "alternatives"
+            ],
+            "properties": {
+              "default": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "alternatives": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "recommendedFor": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    }
+  }
+}

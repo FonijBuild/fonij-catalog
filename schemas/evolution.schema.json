@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FonijBuild/fonij-catalog/schemas/evolution.schema.json",
+  "title": "Fonij Evolution",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "description",
+    "status",
+    "fromBlueprint",
+    "toBlueprint",
+    "preconditions",
+    "operations"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "experimental",
+        "stable",
+        "deprecated"
+      ]
+    },
+    "fromBlueprint": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "toBlueprint": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "preconditions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "fonij-project",
+          "clean-git"
+        ]
+      }
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "app",
+              "to"
+            ],
+            "properties": {
+              "type": {
+                "const": "move-app"
+              },
+              "app": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "app",
+              "target",
+              "foundation",
+              "path"
+            ],
+            "properties": {
+              "type": {
+                "const": "add-foundation"
+              },
+              "app": {
+                "type": "string",
+                "minLength": 1
+              },
+              "target": {
+                "enum": [
+                  "web",
+                  "mobile",
+                  "api",
+                  "browser-extension",
+                  "service"
+                ]
+              },
+              "foundation": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "packageManager"
+            ],
+            "properties": {
+              "type": {
+                "const": "create-workspace"
+              },
+              "packageManager": {
+                "enum": [
+                  "pnpm",
+                  "npm",
+                  "yarn",
+                  "bun"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

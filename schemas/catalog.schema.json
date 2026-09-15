@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FonijBuild/fonij-catalog/schemas/catalog.schema.json",
+  "title": "Fonij Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "catalogVersion",
+    "updatedAt",
+    "foundations",
+    "blueprints",
+    "capabilities",
+    "recipes",
+    "evolutions"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "catalogVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "foundations": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^\\./foundations/[a-z0-9-]+\\.json$"
+      }
+    },
+    "blueprints": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^\\./blueprints/[a-z0-9-]+\\.json$"
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^\\./capabilities/[a-z0-9-]+\\.json$"
+      }
+    },
+    "recipes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^\\./recipes/[a-z0-9-]+\\.json$"
+      }
+    },
+    "evolutions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^\\./evolutions/[a-z0-9-]+\\.json$"
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FonijBuild/fonij-catalog/schemas/foundation.schema.json",
+  "title": "Fonij Foundation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "description",
+    "target",
+    "status",
+    "official",
+    "source",
+    "runtime",
+    "provides",
+    "compatibleWith",
+    "manifestPath",
+    "commands"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target": {
+      "enum": [
+        "web",
+        "mobile",
+        "api",
+        "browser-extension",
+        "service"
+      ]
+    },
+    "status": {
+      "enum": [
+        "experimental",
+        "stable",
+        "deprecated"
+      ]
+    },
+    "official": {
+      "type": "boolean"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "ref",
+        "version"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z.-]+)?$"
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "language",
+        "framework",
+        "packageManager"
+      ],
+      "properties": {
+        "language": {
+          "enum": [
+            "typescript",
+            "javascript",
+            "python"
+          ]
+        },
+        "framework": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packageManager": {
+          "enum": [
+            "pnpm",
+            "npm",
+            "yarn",
+            "bun",
+            "uv",
+            "none"
+          ]
+        }
+      }
+    },
+    "provides": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "compatibleWith": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "manifestPath": {
+      "type": "string",
+      "const": ".fonij/starter.json"
+    },
+    "commands": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "install",
+        "check"
+      ],
+      "properties": {
+        "install": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command",
+            "args"
+          ],
+          "properties": {
+            "command": {
+              "type": "string",
+              "minLength": 1
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "dev": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command",
+            "args"
+          ],
+          "properties": {
+            "command": {
+              "type": "string",
+              "minLength": 1
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command",
+            "args"
+          ],
+          "properties": {
+            "command": {
+              "type": "string",
+              "minLength": 1
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
