@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+
+  "foundations": [
+    {
+      "id": "web-nextjs",
+      "repository": "FonijBuild/easy-nextjs-web-starter",
+      "ref": "v1.2.0"
+    },
+    {
+      "id": "api-django",
+      "repository": "FonijBuild/easy-django-api-starter",
+      "ref": "v1.1.0"
+    }
+  ]
+}
