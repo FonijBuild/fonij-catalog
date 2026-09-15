@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "mobile-to-mobile-api",
+  "name": "Mobile → Mobile + API",
+  "description": "Evolve a standalone Expo app into a mobile + Django API monorepo.",
+  "status": "stable",
+  "fromBlueprint": "mobile",
+  "toBlueprint": "mobile-api",
+  "preconditions": [
+    "fonij-project",
+    "clean-git"
+  ],
+  "operations": [
+    {
+      "type": "move-app",
+      "app": "mobile",
+      "to": "apps/mobile"
+    },
+    {
+      "type": "add-foundation",
+      "app": "api",
+      "target": "api",
+      "foundation": "api-django",
+      "path": "apps/api"
+    },
+    {
+      "type": "create-workspace",
+      "packageManager": "pnpm"
+    }
+  ]
+}

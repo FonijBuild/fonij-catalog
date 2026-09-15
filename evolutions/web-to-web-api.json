@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "web-to-web-api",
+  "name": "Web → Web + API",
+  "description": "Evolve a standalone web project into a web + Django API monorepo without rebuilding the web application.",
+  "status": "stable",
+  "fromBlueprint": "web",
+  "toBlueprint": "web-api",
+  "preconditions": [
+    "fonij-project",
+    "clean-git"
+  ],
+  "operations": [
+    {
+      "type": "move-app",
+      "app": "web",
+      "to": "apps/web"
+    },
+    {
+      "type": "add-foundation",
+      "app": "api",
+      "target": "api",
+      "foundation": "api-django",
+      "path": "apps/api"
+    },
+    {
+      "type": "create-workspace",
+      "packageManager": "pnpm"
+    }
+  ]
+}

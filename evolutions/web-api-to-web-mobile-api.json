@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "web-api-to-web-mobile-api",
+  "name": "Web + API → Web + Mobile + API",
+  "description": "Add an Expo mobile client to an existing web + API product monorepo.",
+  "status": "stable",
+  "fromBlueprint": "web-api",
+  "toBlueprint": "web-mobile-api",
+  "preconditions": [
+    "fonij-project",
+    "clean-git"
+  ],
+  "operations": [
+    {
+      "type": "add-foundation",
+      "app": "mobile",
+      "target": "mobile",
+      "foundation": "app-expo",
+      "path": "apps/mobile"
+    }
+  ]
+}
