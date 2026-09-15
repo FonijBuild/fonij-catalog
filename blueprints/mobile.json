@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "mobile",
+  "name": "Mobile",
+  "description": "Standalone cross-platform Expo application for mobile-first products and prototypes.",
+  "status": "stable",
+  "workspace": "standalone",
+  "targets": [
+    "mobile"
+  ],
+  "apps": [
+    {
+      "id": "mobile",
+      "target": "mobile",
+      "path": ".",
+      "foundation": {
+        "default": "app-expo",
+        "alternatives": []
+      }
+    }
+  ],
+  "capabilities": [],
+  "recommendedFor": [
+    "mobile-first",
+    "prototype",
+    "offline-capable-ui",
+    "native-device-experience"
+  ]
+}

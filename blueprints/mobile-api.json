@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "mobile-api",
+  "name": "Mobile + API",
+  "description": "Expo mobile application with a dedicated Django API in a monorepo.",
+  "status": "stable",
+  "workspace": "monorepo",
+  "targets": [
+    "mobile",
+    "api"
+  ],
+  "apps": [
+    {
+      "id": "mobile",
+      "target": "mobile",
+      "path": "apps/mobile",
+      "foundation": {
+        "default": "app-expo",
+        "alternatives": []
+      }
+    },
+    {
+      "id": "api",
+      "target": "api",
+      "path": "apps/api",
+      "foundation": {
+        "default": "api-django",
+        "alternatives": []
+      }
+    }
+  ],
+  "capabilities": [
+    "rest-api"
+  ],
+  "recommendedFor": [
+    "mobile-product",
+    "authenticated-mobile-app",
+    "persistent-data",
+    "admin-workflows"
+  ]
+}

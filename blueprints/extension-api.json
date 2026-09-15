@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "extension-api",
+  "name": "Browser Extension + API",
+  "description": "Browser extension backed by a dedicated Django API.",
+  "status": "stable",
+  "workspace": "monorepo",
+  "targets": [
+    "browser-extension",
+    "api"
+  ],
+  "apps": [
+    {
+      "id": "extension",
+      "target": "browser-extension",
+      "path": "apps/extension",
+      "foundation": {
+        "default": "browser-extension",
+        "alternatives": []
+      }
+    },
+    {
+      "id": "api",
+      "target": "api",
+      "path": "apps/api",
+      "foundation": {
+        "default": "api-django",
+        "alternatives": []
+      }
+    }
+  ],
+  "capabilities": [
+    "rest-api"
+  ],
+  "recommendedFor": [
+    "authenticated-extension",
+    "server-backed-extension",
+    "shared-user-data"
+  ]
+}

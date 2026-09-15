@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "web-mobile-api",
+  "name": "Web + Mobile + API",
+  "description": "Shared backend with web and mobile clients in one product monorepo.",
+  "status": "stable",
+  "workspace": "monorepo",
+  "targets": [
+    "web",
+    "mobile",
+    "api"
+  ],
+  "apps": [
+    {
+      "id": "web",
+      "target": "web",
+      "path": "apps/web",
+      "foundation": {
+        "default": "web-spa",
+        "alternatives": [
+          "web-nextjs"
+        ]
+      }
+    },
+    {
+      "id": "mobile",
+      "target": "mobile",
+      "path": "apps/mobile",
+      "foundation": {
+        "default": "app-expo",
+        "alternatives": []
+      }
+    },
+    {
+      "id": "api",
+      "target": "api",
+      "path": "apps/api",
+      "foundation": {
+        "default": "api-django",
+        "alternatives": []
+      }
+    }
+  ],
+  "capabilities": [
+    "rest-api"
+  ],
+  "recommendedFor": [
+    "multi-surface-product",
+    "customer-web-and-mobile",
+    "shared-domain-backend"
+  ]
+}

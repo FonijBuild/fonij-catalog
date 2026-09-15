@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "service",
+  "name": "Service",
+  "description": "Standalone Python service for automation, workers, webhooks, integrations, and messaging workloads.",
+  "status": "stable",
+  "workspace": "standalone",
+  "targets": [
+    "service"
+  ],
+  "apps": [
+    {
+      "id": "service",
+      "target": "service",
+      "path": ".",
+      "foundation": {
+        "default": "python-service",
+        "alternatives": []
+      }
+    }
+  ],
+  "capabilities": [],
+  "recommendedFor": [
+    "automation",
+    "worker",
+    "webhook-consumer",
+    "scheduled-job",
+    "integration-service",
+    "messaging-bot"
+  ]
+}

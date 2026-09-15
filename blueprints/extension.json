@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "extension",
+  "name": "Browser Extension",
+  "description": "Standalone browser extension product.",
+  "status": "stable",
+  "workspace": "standalone",
+  "targets": [
+    "browser-extension"
+  ],
+  "apps": [
+    {
+      "id": "extension",
+      "target": "browser-extension",
+      "path": ".",
+      "foundation": {
+        "default": "browser-extension",
+        "alternatives": []
+      }
+    }
+  ],
+  "capabilities": [],
+  "recommendedFor": [
+    "browser-workflow",
+    "content-script",
+    "side-panel",
+    "browser-assistant"
+  ]
+}
