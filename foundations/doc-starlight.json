@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "status": "stable",
+  "official": true,
+  "manifestPath": ".fonij/starter.json",
+  "id": "doc-starlight",
+  "name": "Starlight Doc",
+  "description": "Markdown-first Astro Starlight foundation for technical documentation, product documentation, knowledge bases, and handbooks.",
+  "target": "web",
+  "source": {
+    "repository": "FonijBuild/easy-starlight-doc-starter",
+    "ref": "v1.0.0",
+    "version": "1.0.0"
+  },
+  "runtime": {
+    "language": "typescript",
+    "framework": "astro-starlight",
+    "packageManager": "pnpm"
+  },
+  "provides": [
+    "documentation",
+    "markdown",
+    "static-site",
+    "search",
+    "seo",
+    "dark-mode"
+  ],
+  "compatibleWith": [
+    "web-nextjs",
+    "web-spa",
+    "api-django",
+    "app-expo",
+    "browser-extension",
+    "python-service"
+  ],
+  "commands": {
+    "install": {
+      "command": "pnpm",
+      "args": ["install"]
+    },
+    "dev": {
+      "command": "pnpm",
+      "args": ["dev"]
+    },
+    "check": {
+      "command": "pnpm",
+      "args": ["check"]
+    }
+  }
+}
